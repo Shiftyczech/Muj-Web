@@ -2,7 +2,11 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#07090e">
+  <meta name="color-scheme" content="dark">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <title>Šimon Tobiáš | Web, Aplikace &amp; Cybersecurity</title>
@@ -15,7 +19,7 @@
   <meta property="og:description" content="Prezentace prací, modernizace webů, vývoj aplikací, technické SEO a kyberbezpečnost.">
 
   <!-- CSS Styly -->
-  <link rel="stylesheet" href="css/style.css?v=2.2">
+  <link rel="stylesheet" href="css/style.css?v=2.3">
 </head>
 <body>
 
@@ -41,7 +45,7 @@
           <span>Otevřen k projektům</span>
         </div>
 
-        <nav>
+        <nav id="site-nav">
           <ul class="nav-links" id="nav-links">
             <li><a href="#uvod" class="nav-link active">Úvod</a></li>
             <li><a href="#co-nabizim" class="nav-link">Co nabízím</a></li>
@@ -52,13 +56,18 @@
         </nav>
 
         <button class="nav-mobile-btn" id="mobile-menu-btn" aria-label="Otevřít navigaci" aria-expanded="false">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="icon-menu" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <line x1="3" y1="18" x2="21" y2="18"></line>
           </svg>
+          <svg class="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
         </button>
       </div>
+      <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
     </header>
 
     <main>
@@ -527,8 +536,8 @@
   </div>
 
   <!-- JavaScript skripty -->
-  <script src="js/projects.js?v=2.2"></script>
-  <script src="js/canvas.js?v=2.2"></script>
-  <script src="js/main.js?v=2.2"></script>
+  <script src="js/projects.js?v=2.3"></script>
+  <script src="js/canvas.js?v=2.3"></script>
+  <script src="js/main.js?v=2.3"></script>
 </body>
 </html>

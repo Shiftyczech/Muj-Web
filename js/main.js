@@ -15,43 +15,68 @@ document.addEventListener("DOMContentLoaded", () => {
  */
 function initNavigation() {
   const mobileBtn = document.getElementById("mobile-menu-btn");
-  const navLinks = document.getElementById("nav-links");
+  const siteNav = document.getElementById("site-nav");
+  const navBackdrop = document.getElementById("nav-backdrop");
   const links = document.querySelectorAll(".nav-link");
 
-  if (mobileBtn && navLinks) {
+  function setMenuState(isOpen) {
+    if (!mobileBtn || !siteNav) return;
+    mobileBtn.classList.toggle("open", isOpen);
+    siteNav.classList.toggle("open", isOpen);
+    if (navBackdrop) navBackdrop.classList.toggle("open", isOpen);
+    mobileBtn.setAttribute("aria-expanded", String(isOpen));
+    document.body.classList.toggle("menu-locked", isOpen);
+  }
+
+  if (mobileBtn && siteNav) {
     mobileBtn.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("open");
-      mobileBtn.setAttribute("aria-expanded", isOpen);
+      const isOpen = !siteNav.classList.contains("open");
+      setMenuState(isOpen);
     });
+
+    if (navBackdrop) {
+      navBackdrop.addEventListener("click", () => setMenuState(false));
+    }
 
     // Zavřít menu po kliknutí na odkaz
     links.forEach((link) => {
       link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-        mobileBtn.setAttribute("aria-expanded", "false");
+        setMenuState(false);
       });
+    });
+
+    // Zavřít menu klávesou Escape
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && siteNav.classList.contains("open")) {
+        setMenuState(false);
+      }
     });
   }
 
   // Zvýraznění aktivní sekce při scrollování
   const sections = document.querySelectorAll("section[id]");
+  let scrollTimeout;
   window.addEventListener("scroll", () => {
-    const scrollY = window.scrollY;
-    sections.forEach((current) => {
-      const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop - 120;
-      const sectionId = current.getAttribute("id");
-      const targetLink = document.querySelector(`.nav-link[href*="${sectionId}"]`);
+    if (scrollTimeout) return;
+    scrollTimeout = setTimeout(() => {
+      scrollTimeout = null;
+      const scrollY = window.scrollY;
+      sections.forEach((current) => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 130;
+        const sectionId = current.getAttribute("id");
+        const targetLink = document.querySelector(`.nav-link[href*="${sectionId}"]`);
 
-      if (targetLink) {
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-          targetLink.classList.add("active");
-        } else {
-          targetLink.classList.remove("active");
+        if (targetLink) {
+          if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+            targetLink.classList.add("active");
+          } else {
+            targetLink.classList.remove("active");
+          }
         }
-      }
-    });
-  });
+      });
+    }, 40);
+  }, { passive: true });
 }
 
 /**
