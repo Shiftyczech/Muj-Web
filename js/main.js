@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initProjects();
   initLightbox();
   initContactCopy();
+  initFaqAccordion();
+  initContactForm();
 });
 
 /**
@@ -286,4 +288,122 @@ function escapeHtml(str) {
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
 }
+
+/**
+ * 5. FAQ Akordeon (interaktivní rozbalování)
+ */
+function initFaqAccordion() {
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach((item) => {
+    const questionBtn = item.querySelector(".faq-question");
+    if (!questionBtn) return;
+
+    questionBtn.addEventListener("click", () => {
+      const isOpen = item.classList.contains("open");
+
+      // Zavřít ostatní otevřené položky pro čistý akordeonový efekt
+      faqItems.forEach((other) => {
+        if (other !== item && other.classList.contains("open")) {
+          other.classList.remove("open");
+          const btn = other.querySelector(".faq-question");
+          if (btn) btn.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      // Přepnout aktuální položku
+      item.classList.toggle("open", !isOpen);
+      questionBtn.setAttribute("aria-expanded", String(!isOpen));
+    });
+  });
+}
+
+/**
+ * 6. Poptávkový formulář s AJAX odesíláním přes FormSubmit.co
+ */
+function initContactForm() {
+  const form = document.getElementById("contact-form");
+  if (!form) return;
+
+  const submitBtn = document.getElementById("form-submit-btn");
+  const btnText = submitBtn ? submitBtn.querySelector(".btn-submit-text") : null;
+  const statusEl = document.getElementById("form-status");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // Honeypot ochrana proti robotům
+    const honey = form.querySelector('input[name="_honey"]');
+    if (honey && honey.value) {
+      return;
+    }
+
+    const nameInput = form.querySelector('[name="name"]');
+    const emailInput = form.querySelector('[name="email"]');
+    const serviceInput = form.querySelector('[name="service"]');
+    const messageInput = form.querySelector('[name="message"]');
+
+    const name = nameInput ? nameInput.value.trim() : "";
+    const email = emailInput ? emailInput.value.trim() : "";
+    const service = serviceInput ? serviceInput.value : "Poptávka";
+    const message = messageInput ? messageInput.value.trim() : "";
+
+    if (!name || !email || !message) {
+      if (statusEl) {
+        statusEl.className = "form-status error";
+        statusEl.textContent = "Prosím vyplňte všechna povinná pole označená hvězdičkou (*).";
+      }
+      return;
+    }
+
+    // Nastavení stavu odesílání
+    if (submitBtn) submitBtn.disabled = true;
+    if (btnText) btnText.textContent = "Odesílám poptávku...";
+    if (statusEl) {
+      statusEl.className = "form-status loading";
+      statusEl.textContent = "Odesílám vaši zprávu...";
+    }
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/simon.tobi@seznam.cz", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          Jméno: name,
+          Email: email,
+          Typ_služby: service,
+          Zpráva: message,
+          _subject: `Nová poptávka z webu: ${service} (${name})`,
+          _template: "table",
+          _captcha: "false"
+        })
+      });
+
+      const data = await response.json();
+
+      if (response.ok && (data.success === "true" || data.success === true)) {
+        form.reset();
+        if (statusEl) {
+          statusEl.className = "form-status success";
+          statusEl.innerHTML = `<strong>Děkuji za zprávu!</strong> Vaše poptávka byla úspěšně odeslána. Ozvu se vám nejpozději do 24 hodin.`;
+        }
+        showToast("Poptávka byla úspěšně odeslána!");
+      } else {
+        throw new Error(data.message || "Chyba při odesílání.");
+      }
+    } catch (err) {
+      if (statusEl) {
+        statusEl.className = "form-status error";
+        statusEl.innerHTML = `Odeslání se nezdařilo. Můžete mi prosím napsat přímo na <a href="mailto:simon.tobi@seznam.cz" style="color: var(--accent-cyan); text-decoration: underline;">simon.tobi@seznam.cz</a>?`;
+      }
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+      if (btnText) btnText.textContent = "Odeslat nezávaznou poptávku";
+    }
+  });
+}
+
 
