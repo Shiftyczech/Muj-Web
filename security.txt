@@ -7,3 +7,4 @@ Preferred-Languages: cs, en
 Canonical: https://shiftyczech.github.io/Muj-Web/.well-known/security.txt
 Policy: https://shiftyczech.github.io/Muj-Web/
 Hiring: https://shiftyczech.github.io/Muj-Web/#kontakt
+
