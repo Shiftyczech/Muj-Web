@@ -1,10 +1,8 @@
 /**
- * Konfigurace projektů pro portfolio Šimona Tobiáše
+ * Konfigurace reálných projektů pro portfolio Šimona Tobiáše
  * 
- * Zde můžeš jednoduše přidávat, upravovat nebo mazat své projekty.
- * Pro přidání nového projektu zkopíruj jeden blok a vyplň své údaje.
- * 
- * Možné kategorie (category): 'web' | 'aplikace' | 'uprava' | 'security'
+ * Obsahuje výhradně hotové projekty s přímými odkazy na GitHub repozitáře.
+ * Možné kategorie (category): 'web' | 'aplikace' | 'security'
  */
 
 const projectsData = [
@@ -33,27 +31,15 @@ const projectsData = [
     featured: true
   },
   {
-    id: "web-portfolio",
-    title: "Osobní portfolio & prezentační web",
+    id: "mujv-web",
+    title: "MůjWeb — Osobní portfolio & prezentace",
     category: "web",
     categoryLabel: "Tvorba webu",
-    summary: "Vlastní webové portfolio zaměřené na rychlost, čistý kód a temný technologický design. Postaveno bez závislostí a zbytečných knihoven pro okamžité nasazení na GitHub Pages.",
-    role: "Kompletní návrh rozhraní, CSS architektura a interaktivní skripty",
+    summary: "Vlastní webové portfolio zaměřené na rychlost načítání, čistý sémantický kód a temný technologický design. Vytvořeno bez frameworků a zbytečných knihoven pro přímé nasazení na GitHub Pages.",
+    role: "Kompletní návrh rozhraní, CSS architektura proměnných, interaktivní canvas na pozadí a obsluha uživatelských událostí",
     tech: ["HTML5", "CSS3", "Vanilla JS", "Canvas API", "GitHub Pages"],
-    githubUrl: "https://github.com/Shiftyczech",
+    githubUrl: "https://github.com/Shiftyczech/M-jWeb",
     demoUrl: "#",
-    featured: false
-  },
-  {
-    id: "web-refactor",
-    title: "Refaktoring a modernizace webu",
-    category: "uprava",
-    categoryLabel: "Úprava a refaktor",
-    summary: "Přepracování staršího webového kódu. Přechod z fixních tabulkových nebo absolutních rozměrů na moderní responzivní grid a flexbox, vyčištění stylů a zrychlení odezvy načítání stránek.",
-    role: "Optimalizace CSS, přepis layoutu do responzivní podoby, oprava zobrazení na mobilních zařízeních a zjednodušení struktury",
-    tech: ["CSS Grid", "Flexbox", "Responsive Design", "Performance Tuning"],
-    githubUrl: "https://github.com/Shiftyczech",
-    demoUrl: null,
-    featured: false
+    featured: true
   }
 ];

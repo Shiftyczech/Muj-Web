@@ -196,27 +196,23 @@ body {
 .logo-brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   text-decoration: none;
   color: var(--text-main);
   font-weight: 700;
   font-size: 1.1rem;
 }
 
-.logo-symbol {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: var(--radius-md);
-  background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(59, 130, 246, 0.2));
-  border: 1px solid var(--border-highlight);
-  color: var(--accent-cyan);
+.logo-tag {
   font-family: var(--font-mono);
-  font-weight: 700;
-  font-size: 0.95rem;
-  box-shadow: 0 0 12px rgba(0, 240, 255, 0.15);
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--accent-cyan);
+  background: var(--accent-cyan-dim);
+  border: 1px solid var(--border-highlight);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.04em;
 }
 
 .nav-status-pill {
@@ -430,19 +426,19 @@ body {
 }
 
 /* ==========================================================================
-   Specializace / Karty Dovedností
+   Co nabízím & Řešení (Služby & Dovednosti)
    ========================================================================== */
-.skills-grid {
+.services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
 }
 
-.skill-card {
+.service-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: 32px 28px;
+  padding: 36px 32px;
   position: relative;
   transition: all var(--transition-normal);
   backdrop-filter: blur(12px);
@@ -451,30 +447,37 @@ body {
   flex-direction: column;
 }
 
-.skill-card::before {
+.service-card::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 28px;
-  right: 28px;
+  left: 32px;
+  right: 32px;
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
   opacity: 0;
   transition: opacity var(--transition-normal);
 }
 
-.skill-card:hover {
+.service-card:hover {
   transform: translateY(-4px);
   border-color: var(--border-active);
   background: var(--bg-card-hover);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), var(--accent-cyan-glow);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45), var(--accent-cyan-glow);
 }
 
-.skill-card:hover::before {
+.service-card:hover::before {
   opacity: 1;
 }
 
-.skill-icon-box {
+.service-card-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.service-icon-box {
   width: 48px;
   height: 48px;
   border-radius: var(--radius-md);
@@ -484,39 +487,133 @@ body {
   align-items: center;
   justify-content: center;
   color: var(--accent-cyan);
+  flex-shrink: 0;
+}
+
+.service-card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.25;
+}
+
+.service-card-desc {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.65;
   margin-bottom: 22px;
 }
 
-.skill-card-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: var(--text-main);
+.service-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
 }
 
-.skill-card-desc {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  flex-grow: 1;
+.service-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #cbd5e1;
 }
 
-.skill-tech-list {
+.service-feature-item svg {
+  color: var(--accent-cyan);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.service-tags-box {
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-subtle);
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  list-style: none;
 }
 
-.skill-tech-item {
+.tech-tag-pill {
   font-family: var(--font-mono);
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border-subtle);
   padding: 4px 10px;
   border-radius: var(--radius-sm);
+  color: #cbd5e1;
+}
+
+.acronym-pill {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  background: var(--accent-cyan-dim);
+  border: 1px solid var(--border-highlight);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+}
+
+/* 3-vrstvý box pro SEO / GEO / LLMO */
+.seo-layers-box {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.seo-layer-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.seo-layer-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.badge-layer-1 {
+  background: rgba(59, 130, 246, 0.18);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.35);
+}
+
+.badge-layer-2 {
+  background: rgba(0, 240, 255, 0.18);
+  color: #00f0ff;
+  border: 1px solid rgba(0, 240, 255, 0.35);
+}
+
+.badge-layer-3 {
+  background: rgba(168, 85, 247, 0.18);
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.35);
+}
+
+.seo-layer-content strong {
+  color: var(--text-main);
+  font-size: 0.88rem;
+}
+
+.seo-layer-content p {
   color: var(--text-muted);
+  margin-top: 2px;
+  font-size: 0.84rem;
 }
 
 /* ==========================================================================
@@ -677,8 +774,57 @@ body {
 }
 
 /* ==========================================================================
-   Sekce Úspěchu: AI Olympiáda & Diplom
+   Sekce Ocenění & Praktické Reference (AI Olympiáda & TryHackMe)
    ========================================================================== */
+.references-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.reference-card {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(10, 16, 28, 0.95) 100%);
+  border: 1px solid var(--border-active);
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.12);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.reference-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.5), 0 0 24px rgba(0, 240, 255, 0.22);
+}
+
+.reference-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 30%, rgba(0, 240, 255, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.reference-card-thm {
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+.reference-card-thm:hover {
+  border-color: #10b981;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.5), 0 0 24px rgba(16, 185, 129, 0.22);
+}
+
+.reference-card-thm::before {
+  background: radial-gradient(circle at 20% 30%, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+}
+
 .achievement-card {
   background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(10, 16, 28, 0.95) 100%);
   border: 1px solid var(--border-active);
@@ -1077,11 +1223,8 @@ body {
    Responzivita (Mobilní telefony & Tablety)
    ========================================================================== */
 @media (max-width: 992px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
+  .services-grid,
+  .references-grid,
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 24px;
