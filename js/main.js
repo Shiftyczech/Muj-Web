@@ -388,9 +388,9 @@ function initContactForm() {
         form.reset();
         if (statusEl) {
           statusEl.className = "form-status success";
-          statusEl.innerHTML = `<strong>Děkuji za zprávu!</strong> Vaše poptávka byla úspěšně odeslána. Ozvu se vám nejpozději do 24 hodin.`;
+          statusEl.innerHTML = `<strong>Díky za zprávu! Vše se v pořádku odeslalo.</strong><div style="margin-top: 4px; color: #a7f3d0; font-size: 0.9rem;">Ozvu se vám nejpozději do 24 hodin na uvedený e-mail.</div>`;
         }
-        showToast("Poptávka byla úspěšně odeslána!");
+        showToast("Zpráva byla v pořádku odeslána!");
       } else {
         throw new Error(data.message || "Chyba při odesílání.");
       }
