@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Šimon Tobiáš | Web, Aplikace &amp; Cybersecurity</title>
+  <meta name="description" content="Osobní portfolio a ukázky práce Šimona Tobiáše. Tvorba a úpravy webů, vývoj aplikací a kyberbezpečnost. Student IT na VOŠKH.">
+  <meta name="author" content="Šimon Tobiáš">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Šimon Tobiáš | Portfolio">
+  <meta property="og:description" content="Prezentace prací, tvorba a úpravy webů, vývoj aplikací a kyberbezpečnost.">
+
+  <!-- CSS Styly -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Interaktivní plátno na pozadí -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="tech-grid-overlay" aria-hidden="true"></div>
+  <div class="ambient-glow glow-top-left" aria-hidden="true"></div>
+  <div class="ambient-glow glow-center-right" aria-hidden="true"></div>
+
+  <!-- Hlavní obsah -->
+  <div class="content-wrapper">
+
+    <!-- Navigační lišta -->
+    <header class="site-header">
+      <div class="container nav-container">
+        <a href="#uvod" class="logo-brand">
+          <span class="logo-symbol">ST</span>
+          <span>Šimon Tobiáš</span>
+        </a>
+
+        <div class="nav-status-pill">
+          <span class="status-dot"></span>
+          <span>VOŠKH IT • Otevřen k projektům</span>
+        </div>
+
+        <nav>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="#uvod" class="nav-link active">Úvod</a></li>
+            <li><a href="#specializace" class="nav-link">Zaměření</a></li>
+            <li><a href="#projekty" class="nav-link">Projekty</a></li>
+            <li><a href="#oceneni" class="nav-link">AI Olympiáda</a></li>
+            <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+          </ul>
+        </nav>
+
+        <button class="nav-mobile-btn" id="mobile-menu-btn" aria-label="Otevřít navigaci" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero sekce -->
+      <section id="uvod" class="hero-section">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-badge">
+              <span>Webový vývoj &bull; Aplikace &bull; Cybersecurity</span>
+            </div>
+            
+            <h1 class="hero-title">
+              Šimon Tobiáš<br>
+              <span class="hero-title-accent">Tvorba a úprava webů &amp; aplikací</span>
+            </h1>
+
+            <p class="hero-subtitle">
+              Student IT na VOŠKH se zájmem o funkční kód, spolehlivé zabezpečení a čistou architekturu.
+            </p>
+
+            <p class="hero-desc">
+              Věnuji se vývoji webových stránek od základu, opravám a modernizaci existujících projektů a tvorbě praktických aplikací. Zakládám si na přehledném zdrojovém kódu, rychlosti načítání a bezpečných postupech bez zbytečného balastu.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projekty" class="btn btn-primary">
+                Prohlédnout projekty
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+              <a href="#kontakt" class="btn btn-secondary">Kontaktovat mě</a>
+            </div>
+
+            <div class="hero-stats">
+              <div class="stat-item">
+                <span class="stat-label">Studium</span>
+                <span class="stat-value">VOŠKH (Obor IT)</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Ocenění</span>
+                <span class="stat-value">Diplom z AI olympiády</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Zaměření</span>
+                <span class="stat-value">Frontend, Backend &amp; Bezpečnost</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sekce: Specializace & Dovednosti -->
+      <section id="specializace" class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-tag">Oblasti působení</div>
+            <h2 class="section-title">Čemu se věnuji a co řeším</h2>
+            <p class="section-desc">
+              Kombinuji praktické programování s bezpečnostním myšlením. Ať už jde o novou webovou prezentaci nebo úpravu funkčního řešení.
+            </p>
+          </div>
+
+          <div class="skills-grid">
+            <!-- Karta 1: Weby -->
+            <div class="skill-card">
+              <div class="skill-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <h3 class="skill-card-title">Tvorba a úpravy webů</h3>
+              <p class="skill-card-desc">
+                Vývoj responzivních stránek od základů i refaktoring starších webů. Přepisování fixních layoutů, zrychlování načítání, odstraňování chyb a úprava CSS stylů pro bezchybné zobrazení na všech typech zařízení.
+              </p>
+              <ul class="skill-tech-list">
+                <li class="skill-tech-item">HTML5 / Semantic</li>
+                <li class="skill-tech-item">Moderní CSS3 / Flex / Grid</li>
+                <li class="skill-tech-item">Responzivní design</li>
+                <li class="skill-tech-item">Optimalizace rychlosti</li>
+              </ul>
+            </div>
+
+            <!-- Karta 2: Aplikace -->
+            <div class="skill-card">
+              <div class="skill-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <h3 class="skill-card-title">Aplikace a programování</h3>
+              <p class="skill-card-desc">
+                Stavba aplikací s logickým členěním kódu, obsluhou uživatelského rozhraní a prací s daty. Zaměření na čistý JavaScript, propojování s API a správné ošetření chybových stavů.
+              </p>
+              <ul class="skill-tech-list">
+                <li class="skill-tech-item">JavaScript (ES6+)</li>
+                <li class="skill-tech-item">DOM &amp; Event Handling</li>
+                <li class="skill-tech-item">REST API &amp; JSON</li>
+                <li class="skill-tech-item">Struktura dat &amp; Logika</li>
+              </ul>
+            </div>
+
+            <!-- Karta 3: Cybersecurity -->
+            <div class="skill-card">
+              <div class="skill-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <h3 class="skill-card-title">Kybernetická bezpečnost</h3>
+              <p class="skill-card-desc">
+                Aplikace bezpečnostních zásad již při psaní kódu. Znalost síťových protokolů, audit zabezpečení HTTP hlaviček, prevence zranitelností (XSS, CSRF) a bezpečné zacházení se vstupy uživatele.
+              </p>
+              <ul class="skill-tech-list">
+                <li class="skill-tech-item">Web App Security</li>
+                <li class="skill-tech-item">HTTP &amp; Bezpečnostní hlavičky</li>
+                <li class="skill-tech-item">Základy sítí &amp; Linux</li>
+                <li class="skill-tech-item">Validace vstupů</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sekce: Projekty a práce -->
+      <section id="projekty" class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-tag">Portfolio &amp; Kód</div>
+            <h2 class="section-title">Vybrané projekty a úpravy</h2>
+            <p class="section-desc">
+              Ukázky mé práce – od tvorby nových rozhraní přes refaktoring a opravy stávajícího kódu až po bezpečnostní skripty.
+            </p>
+          </div>
+
+          <!-- Filtrovací lišta -->
+          <div class="projects-filter-bar">
+            <button class="filter-btn active" data-filter="all">Všechny projekty</button>
+            <button class="filter-btn" data-filter="web">Tvorba webu</button>
+            <button class="filter-btn" data-filter="uprava">Úpravy a refaktoring</button>
+            <button class="filter-btn" data-filter="aplikace">Aplikace</button>
+            <button class="filter-btn" data-filter="security">Kyberbezpečnost</button>
+          </div>
+
+          <!-- Dynamický kontejner pro projekty -->
+          <div class="projects-grid" id="projects-container">
+            <!-- Karty jsou generovány pomocí js/projects.js a js/main.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Sekce: Úspěchy - AI Olympiáda -->
+      <section id="oceneni" class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-tag">Soutěže &amp; Ocenění</div>
+            <h2 class="section-title">Diplom z AI olympiády</h2>
+            <p class="section-desc">
+              Účast a ocenění v celostátní soutěži zaměřené na logické uvažování, algoritmy a principy umělé inteligence.
+            </p>
+          </div>
+
+          <div class="achievement-card">
+            <!-- Vizuální náhled diplomu s proklikem do Lightboxu -->
+            <div class="diploma-preview-container" id="diploma-trigger" role="button" tabindex="0" aria-label="Zvětšit diplom z AI olympiády">
+              <img src="assets/img/placeholder-diplom.svg" alt="Diplom z AI olympiády - Šimon Tobiáš" class="diploma-img" id="diploma-preview-img">
+              <div class="diploma-overlay-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                <span>Zvětšit náhled</span>
+              </div>
+            </div>
+
+            <!-- Textový popis ocenění -->
+            <div class="achievement-details">
+              <div class="achievement-badge">Celostátní kolo</div>
+              <h3 class="achievement-title">Ocenění v AI olympiádě</h3>
+              <p class="achievement-text">
+                V soutěži jsem řešil komplexní algoritmické úlohy, analýzu datových struktur a praktické aplikace konceptů strojového učení. Ocenění potvrzuje schopnost systematického přístupu k řešení netriviálních technických výzev.
+              </p>
+              
+              <ul class="achievement-points">
+                <li class="achievement-point">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Praktické porozumění algoritmům a logickým strukturám</span>
+                </li>
+                <li class="achievement-point">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Schopnost analyzovat problém a navrhnout efektivní postup</span>
+                </li>
+                <li class="achievement-point">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Propojení teorie umělé inteligence s reálným kódem</span>
+                </li>
+              </ul>
+
+              <div>
+                <button type="button" class="btn btn-secondary" onclick="document.getElementById('diploma-trigger').click()">
+                  Zobrazit celý certifikát
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sekce: Kontakt -->
+      <section id="kontakt" class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-tag">Spojení</div>
+            <h2 class="section-title">Kontaktujte mě</h2>
+            <p class="section-desc">
+              Máte zájem o spolupráci na webu, úpravu existujícího projektu nebo konzultaci? Můžete mi přímo zavolat, napsat e-mail nebo mě kontaktovat přes sítě.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <!-- E-mail karta -->
+            <div class="contact-card">
+              <div class="contact-info">
+                <div class="contact-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-label">E-mailová adresa</div>
+                  <a href="mailto:simon.tobi@seznam.cz" class="contact-val">simon.tobi@seznam.cz</a>
+                </div>
+              </div>
+              <button type="button" class="btn-copy" data-copy="simon.tobi@seznam.cz" data-label="E-mail" title="Zkopírovat e-mail">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span>Kopírovat</span>
+              </button>
+            </div>
+
+            <!-- Telefon karta -->
+            <div class="contact-card">
+              <div class="contact-info">
+                <div class="contact-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-label">Telefonní číslo</div>
+                  <a href="tel:+420704489671" class="contact-val">+420 704 489 671</a>
+                </div>
+              </div>
+              <button type="button" class="btn-copy" data-copy="+420704489671" data-label="Telefon" title="Zkopírovat telefon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span>Kopírovat</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Odkazy na sítě -->
+          <div class="social-links-bar">
+            <a href="https://github.com/simontobias" target="_blank" rel="noopener noreferrer" class="social-link-item">
+            <a href="https://github.com/Shiftyczech" target="_blank" rel="noopener noreferrer" class="social-link-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              <span>GitHub Profil</span>
+              <span>GitHub Profil (@Shiftyczech)</span>
+            </a>
+            <a href="https://instagram.com/simontobias" target="_blank" rel="noopener noreferrer" class="social-link-item">
+            <a href="https://www.instagram.com/simon_tobias_" target="_blank" rel="noopener noreferrer" class="social-link-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              <span>Instagram</span>
+              <span>Instagram (@simon_tobias_)</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Patička webu -->
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <div>
+          <span>&copy; <span id="current-year">2026</span> Šimon Tobiáš</span>
+          <span style="margin: 0 8px; color: var(--border-subtle);">&bull;</span>
+          <span style="color: var(--text-dim);">Student IT na VOŠKH</span>
+        </div>
+        <div class="footer-tech-tag">
+          Hostováno na GitHub Pages &bull; Čistý HTML/CSS/JS
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Lightbox modal pro zvětšení diplomu -->
+  <div class="lightbox-modal" id="diploma-modal" role="dialog" aria-modal="true" aria-label="Detail diplomu z AI olympiády">
+    <div class="lightbox-content-box">
+      <button type="button" class="lightbox-close-btn" id="lightbox-close" aria-label="Zavřít modal">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <img src="assets/img/placeholder-diplom.svg" alt="Diplom z AI olympiády - Šimon Tobiáš" class="lightbox-img" id="lightbox-full-img">
+      <div class="lightbox-caption">
+        <span>Diplom z AI olympiády — Šimon Tobiáš</span>
+        <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan);">VOŠKH IT</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript skripty -->
+  <script src="js/projects.js"></script>
+  <script src="js/canvas.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+
