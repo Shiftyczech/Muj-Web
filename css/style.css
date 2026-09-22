@@ -6,13 +6,14 @@
 :root {
   --bg-main: #07090e;
   --bg-surface: #0e131d;
-  --bg-card: rgba(15, 22, 36, 0.72);
-  --bg-card-hover: rgba(20, 30, 48, 0.88);
-  --bg-glass: rgba(10, 15, 25, 0.75);
+  --bg-card: rgba(13, 20, 34, 0.88);
+  --bg-card-hover: rgba(18, 28, 48, 0.96);
+  --bg-glass: rgba(10, 15, 25, 0.85);
 
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-active: rgba(0, 240, 255, 0.4);
-  --border-highlight: rgba(0, 240, 255, 0.2);
+  --border-subtle: rgba(255, 255, 255, 0.14);
+  --border-card: rgba(0, 240, 255, 0.18);
+  --border-active: rgba(0, 240, 255, 0.5);
+  --border-highlight: rgba(0, 240, 255, 0.28);
 
   --accent-cyan: #00f0ff;
   --accent-cyan-dim: rgba(0, 240, 255, 0.12);
@@ -130,13 +131,13 @@ body {
 }
 
 .section {
-  padding-top: 96px;
-  padding-bottom: 96px;
+  padding-top: clamp(48px, 6vh, 76px);
+  padding-bottom: clamp(48px, 6vh, 76px);
 }
 
 /* Typografie & Nadpisy sekcí */
 .section-header {
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 .section-tag {
@@ -290,9 +291,9 @@ body {
    Hero Sekce
    ========================================================================== */
 .hero-section {
-  padding-top: 160px;
-  padding-bottom: 90px;
-  min-height: 88vh;
+  padding-top: clamp(100px, 12vh, 140px);
+  padding-bottom: clamp(40px, 5vh, 60px);
+  min-height: auto;
   display: flex;
   align-items: center;
 }
@@ -431,20 +432,24 @@ body {
 .services-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
+  gap: 24px;
+  align-items: stretch;
 }
 
 .service-card {
+  background: #0d1320;
   background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-card);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
   border-radius: var(--radius-lg);
-  padding: 36px 32px;
+  padding: 32px 28px;
   position: relative;
   transition: all var(--transition-normal);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .service-card::before {
@@ -654,20 +659,24 @@ body {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
+  gap: 24px;
+  align-items: stretch;
 }
 
 .project-card {
+  background: #0d1320;
   background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-card);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
   border-radius: var(--radius-lg);
-  padding: 32px;
+  padding: 30px 28px;
   display: flex;
   flex-direction: column;
   transition: all var(--transition-normal);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   position: relative;
+  height: 100%;
 }
 
 .project-card:hover {
@@ -779,26 +788,29 @@ body {
 .references-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
+  gap: 24px;
+  align-items: stretch;
 }
 
 .reference-card {
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(10, 16, 28, 0.95) 100%);
-  border: 1px solid var(--border-active);
-  box-shadow: 0 0 30px rgba(0, 240, 255, 0.12);
+  background: #0d1320;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(10, 16, 28, 0.98) 100%);
+  border: 1px solid rgba(0, 240, 255, 0.28);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45), 0 0 20px rgba(0, 240, 255, 0.08);
   border-radius: var(--radius-lg);
-  padding: 36px 32px;
+  padding: 32px 28px;
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  height: 100%;
   transition: all var(--transition-normal);
 }
 
 .reference-card:hover {
   transform: translateY(-4px);
   border-color: var(--accent-cyan);
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.5), 0 0 24px rgba(0, 240, 255, 0.22);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55), 0 0 24px rgba(0, 240, 255, 0.25);
 }
 
 .reference-card::before {
@@ -813,12 +825,13 @@ body {
 }
 
 .reference-card-thm {
-  border-color: rgba(16, 185, 129, 0.35);
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45), 0 0 20px rgba(16, 185, 129, 0.08);
 }
 
 .reference-card-thm:hover {
   border-color: #10b981;
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.5), 0 0 24px rgba(16, 185, 129, 0.22);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55), 0 0 24px rgba(16, 185, 129, 0.25);
 }
 
 .reference-card-thm::before {
@@ -826,14 +839,15 @@ body {
 }
 
 .achievement-card {
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(10, 16, 28, 0.95) 100%);
-  border: 1px solid var(--border-active);
-  box-shadow: 0 0 30px rgba(0, 240, 255, 0.12);
+  background: #0d1320;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(10, 16, 28, 0.98) 100%);
+  border: 1px solid rgba(0, 240, 255, 0.28);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 240, 255, 0.1);
   border-radius: var(--radius-lg);
-  padding: 40px;
+  padding: 36px;
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  gap: 40px;
+  gap: 36px;
   align-items: center;
   position: relative;
   overflow: hidden;
@@ -954,15 +968,17 @@ body {
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-bottom: 36px;
+  gap: 20px;
+  margin-bottom: 32px;
 }
 
 .contact-card {
+  background: #0d1320;
   background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-card);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
   border-radius: var(--radius-lg);
-  padding: 28px;
+  padding: 24px 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -976,7 +992,7 @@ body {
   border-color: var(--border-active);
   background: var(--bg-card-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 18px rgba(0, 240, 255, 0.15);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45), 0 0 20px rgba(0, 240, 255, 0.2);
 }
 
 .contact-info {
@@ -1046,9 +1062,11 @@ body {
   align-items: center;
   justify-content: center;
   gap: 20px;
-  padding: 24px;
-  background: rgba(15, 23, 42, 0.5);
-  border: 1px solid var(--border-subtle);
+  padding: 22px;
+  background: #0d1320;
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid var(--border-card);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
   border-radius: var(--radius-lg);
 }
 
