@@ -1,0 +1,23 @@
+{
+  "name": "Šimon Tobiáš | Web, Aplikace & Cybersecurity",
+  "short_name": "Šimon Tobiáš",
+  "description": "Osobní portfolio a ukázky práce Šimona Tobiáše. Modernizace webů, vývoj aplikací, technické SEO a kybernetická bezpečnost.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#07090e",
+  "theme_color": "#07090e",
+  "icons": [
+    {
+      "src": "assets/img/favicon.png",
+      "sizes": "64x64",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

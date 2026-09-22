@@ -11,7 +11,15 @@ document.addEventListener("DOMContentLoaded", () => {
   initFaqAccordion();
   initContactForm();
   initScrollTop();
+  updateCurrentYear();
 });
+
+function updateCurrentYear() {
+  const yearEl = document.getElementById("current-year");
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+}
 
 /**
  * 1. Navigace a mobilní menu
@@ -122,15 +130,23 @@ function initProjects() {
         `
         : "";
 
-      // Demo tlačítko
-      const demoBtn = project.demoUrl && project.demoUrl !== "#"
-        ? `
+      // Demo tlačítko nebo odznak živého webu
+      let demoBtn = "";
+      if (project.id === "mujv-web" || project.isCurrentSite) {
+        demoBtn = `
+          <span class="project-current-badge" title="Tento web slouží jako živá ukázka">
+            <span class="pulse-dot"></span>
+            Právě prohlížíte
+          </span>
+        `;
+      } else if (project.demoUrl && project.demoUrl !== "#") {
+        demoBtn = `
           <a href="${escapeHtml(project.demoUrl)}" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="Otevřít živou ukázku">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
             Živá ukázka
           </a>
-        `
-        : "";
+        `;
+      }
 
       const techBadges = project.tech
         .map((t) => `<span class="tech-badge">${escapeHtml(t)}</span>`)
