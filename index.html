@@ -34,8 +34,62 @@
   <meta name="twitter:description" content="Prezentace prací, modernizace webů, vývoj aplikací, technické SEO a kyberbezpečnost.">
   <meta name="twitter:image" content="https://shiftyczech.github.io/Muj-Web/assets/img/og-preview.png">
 
+  <!-- Schema.org strukturovaná data (JSON-LD) pro Google a AI enginy -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://shiftyczech.github.io/Muj-Web/#person",
+        "name": "Šimon Tobiáš",
+        "url": "https://shiftyczech.github.io/Muj-Web/",
+        "jobTitle": "Webový vývojář & specialista na technické zabezpečení",
+        "description": "Student IT na VOŠKH se zaměřením na tvorbu a modernizaci webů, vývoj aplikací, technické SEO a kybernetickou bezpečnost podle standardů OWASP.",
+        "image": "https://shiftyczech.github.io/Muj-Web/assets/img/og-preview.png",
+        "sameAs": [
+          "https://github.com/Shiftyczech",
+          "https://tryhackme.com/p/Zeroczech",
+          "https://www.instagram.com/simon_tobias_"
+        ],
+        "knowsAbout": [
+          "Web Development",
+          "HTML5",
+          "CSS3",
+          "JavaScript",
+          "TypeScript",
+          "React Native",
+          "Rust",
+          "Python",
+          "Cybersecurity",
+          "OWASP",
+          "Search Engine Optimization (SEO)",
+          "Generative Engine Optimization (GEO)",
+          "Answer Engine Optimization (AEO)",
+          "Large Language Model Optimization (LLMO)"
+        ],
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "VOŠ a SPŠ Kutná Hora"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://shiftyczech.github.io/Muj-Web/#website",
+        "url": "https://shiftyczech.github.io/Muj-Web/",
+        "name": "Šimon Tobiáš | Portfolio",
+        "description": "Osobní portfolio a ukázky práce Šimona Tobiáše. Modernizace webů, vývoj aplikací, technické SEO a kyberbezpečnost.",
+        "publisher": {
+          "@id": "https://shiftyczech.github.io/Muj-Web/#person"
+        },
+        "inLanguage": "cs"
+      }
+    ]
+  }
+  </script>
+
   <!-- CSS Styly -->
-  <link rel="stylesheet" href="css/style.css?v=2.7">
+  <link rel="stylesheet" href="css/style.css?v=2.8">
 </head>
 <body>
 
@@ -744,6 +798,13 @@
 
   </div>
 
+  <!-- Tlačítko Zpět nahoru (Scroll to top) -->
+  <button type="button" class="btn-scroll-top" id="scroll-top-btn" aria-label="Zpět na začátek stránky">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
   <!-- Lightbox modal pro zvětšení diplomu -->
   <div class="lightbox-modal" id="diploma-modal" role="dialog" aria-modal="true" aria-label="Detail diplomu z AI olympiády">
     <div class="lightbox-content-box">
@@ -759,8 +820,8 @@
   </div>
 
   <!-- JavaScript skripty -->
-  <script src="js/projects.js?v=2.7"></script>
-  <script src="js/canvas.js?v=2.7"></script>
-  <script src="js/main.js?v=2.7"></script>
+  <script src="js/projects.js?v=2.8"></script>
+  <script src="js/canvas.js?v=2.8"></script>
+  <script src="js/main.js?v=2.8"></script>
 </body>
 </html>

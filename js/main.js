@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initContactCopy();
   initFaqAccordion();
   initContactForm();
+  initScrollTop();
 });
 
 /**
@@ -405,5 +406,36 @@ function initContactForm() {
     }
   });
 }
+
+/**
+ * 7. Plovoucí tlačítko Zpět nahoru (Scroll to top)
+ */
+function initScrollTop() {
+  const scrollTopBtn = document.getElementById("scroll-top-btn");
+  if (!scrollTopBtn) return;
+
+  let ticking = false;
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        if (window.scrollY > 400) {
+          scrollTopBtn.classList.add("visible");
+        } else {
+          scrollTopBtn.classList.remove("visible");
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+}
+
 
 

@@ -1625,6 +1625,50 @@ a, button, input, select {
 }
 
 /* ==========================================================================
+   Tlačítko Zpět nahoru (Scroll to top)
+   ========================================================================== */
+.btn-scroll-top {
+  position: fixed;
+  right: 28px;
+  bottom: max(28px, calc(var(--sab) + 20px));
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(13, 20, 36, 0.85);
+  border: 1px solid var(--border-highlight);
+  color: var(--accent-cyan);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), var(--accent-cyan-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 90;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: all var(--transition-normal);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.btn-scroll-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.btn-scroll-top:hover {
+  background: var(--accent-cyan);
+  color: #030712;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 240, 255, 0.45);
+}
+
+.btn-scroll-top:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
    Responzivita (Mobilní telefony & Tablety)
    ========================================================================== */
 @media (max-width: 992px) {
@@ -1925,6 +1969,13 @@ a, button, input, select {
     left: 16px;
     right: 16px;
     bottom: max(20px, calc(var(--sab) + 16px));
+  }
+
+  .btn-scroll-top {
+    right: 16px;
+    bottom: max(20px, calc(var(--sab) + 16px));
+    width: 42px;
+    height: 42px;
   }
 
   .toast {

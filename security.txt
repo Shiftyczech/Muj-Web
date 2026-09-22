@@ -1,0 +1,9 @@
+# Security policy for Simon Tobias (https://shiftyczech.github.io/Muj-Web/)
+# Follows RFC 9116 standard
+
+Contact: mailto:simon.tobi@seznam.cz
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: cs, en
+Canonical: https://shiftyczech.github.io/Muj-Web/.well-known/security.txt
+Policy: https://shiftyczech.github.io/Muj-Web/
+Hiring: https://shiftyczech.github.io/Muj-Web/#kontakt
